@@ -1,4 +1,5 @@
 import managers.Managers;
+import managers.TaskManager;
 import model.Epic;
 import model.Subtask;
 import model.Task;
@@ -6,10 +7,8 @@ import managers.InMemoryTaskManager;
 import status.Status;
 
 public class Main {
-
+    public static InMemoryTaskManager inMemoryTaskManager = Managers.getDeafault();
     public static void main(String[] args) {
-        InMemoryTaskManager inMemoryTaskManager = Managers.getDeafault();
-
 
         // Создайте две задачи
         System.out.println("2 tasl");
@@ -75,6 +74,7 @@ public class Main {
         System.out.println(inMemoryTaskManager.getAllEpics());
         System.out.println(inMemoryTaskManager.getAllSubtasks());
 
+        printAllTasks();
 
         // просмотр задач и заполнение стори
         System.out.println("-----");
@@ -93,7 +93,25 @@ public class Main {
         inMemoryTaskManager.getTaskById(1);
         System.out.println(inMemoryTaskManager.getHistory());
         System.out.println(inMemoryTaskManager.getHistory().size());
+    }
+    private static void printAllTasks() {
+        System.out.println("Задачи:");
+        for (Task task : Main.inMemoryTaskManager.getAllTasks()) {
+            System.out.println(task);
+        }
+        System.out.println("Эпики:");
+        for (Epic epic : Main.inMemoryTaskManager.getAllEpics()) {
+            System.out.println(epic);
 
+            for (Task task : Main.inMemoryTaskManager.getSubtaskList(epic)) {
+                System.out.println("--> " + task);
+            }
+        }
+
+        System.out.println("Подзадачи:");
+        for (Task subtask : Main.inMemoryTaskManager.getAllSubtasks()) {
+            System.out.println(subtask);
+        }
     }
 }
 
