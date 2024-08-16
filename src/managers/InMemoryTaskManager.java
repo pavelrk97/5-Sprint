@@ -14,7 +14,8 @@ public class InMemoryTaskManager implements TaskManager {
     protected HashMap<Integer, Task> tasks;
     protected HashMap<Integer, Epic> epics;
     protected HashMap<Integer, Subtask> subtasks;
-    protected InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
+    protected HistoryManager historyManager = Managers.getDefaultHistory(); // бращается к менеджеру истории через
+    // интерфейс HistoryManager и использует реализацию, которую возвращает метод getDefaultHistory.
 
     protected int taskId = 0;
     protected int epicId = 0;
