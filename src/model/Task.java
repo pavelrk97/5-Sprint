@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.util.Objects;
 import status.Status;
@@ -77,7 +77,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Model.Task{" +
+        return "model.Task{" +
                 "id=" + getId() +
                 ", name='" + getName() + '\'' +
                 ", description='" + getDescription() + '\'' +

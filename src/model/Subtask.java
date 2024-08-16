@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import status.Status;
 
@@ -16,7 +16,7 @@ public class Subtask extends Task {
 
     @Override
     public String toString() {
-        return "Model.Subtask{" +
+        return "model.Subtask{" +
                 "epicId=" + getEpicId() +
                 ", id=" + getId() +
                 ", name='" + getName() + '\'' +
