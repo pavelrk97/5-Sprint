@@ -1,5 +1,4 @@
 import managers.Managers;
-import managers.TaskManager;
 import model.Epic;
 import model.Subtask;
 import model.Task;
@@ -7,7 +6,7 @@ import managers.InMemoryTaskManager;
 import status.Status;
 
 public class Main {
-    public static InMemoryTaskManager inMemoryTaskManager = Managers.getDeafault();
+    public static InMemoryTaskManager inMemoryTaskManager = Managers.getDefault();
     public static void main(String[] args) {
 
         // Создайте две задачи
