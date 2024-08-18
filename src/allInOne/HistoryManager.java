@@ -1,4 +1,4 @@
-package managers;
+package allInOne;
 
 import model.Task;
 

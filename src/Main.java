@@ -1,8 +1,8 @@
-import managers.Managers;
+import allInOne.Managers;
 import model.Epic;
 import model.Subtask;
 import model.Task;
-import managers.InMemoryTaskManager;
+import allInOne.InMemoryTaskManager;
 import status.Status;
 
 public class Main {
